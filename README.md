@@ -1,6 +1,6 @@
 # BÀI THỰC HÀNH 03 - KIỂM THỬ HỘP ĐEN (PYTHON)
 
-Repository này gồm 8 bài toán và bộ test theo hướng kiểm thử hộp đen.
+Repository gồm 8 bài toán và bộ test theo hướng kiểm thử hộp đen.
 
 ## Danh sách bài toán
 
@@ -13,7 +13,7 @@ Repository này gồm 8 bài toán và bộ test theo hướng kiểm thử hộ
 7. Tìm UCLN của a và b
 8. Tính tổng S = 1! + 2! + 3! + ... + n!
 
-## Cấu trúc dự án hiện tại
+## Cấu trúc dự án
 
 ```text
 .
@@ -30,29 +30,48 @@ Repository này gồm 8 bài toán và bộ test theo hướng kiểm thử hộ
 |   |   |-- gcd_calculator.py
 |   |   `-- factorial_sum.py
 |   `-- issue2/
+|       |-- __init__.py
+|       |-- parsers.py
+|       |-- rectangle_perimeter.py
+|       |-- rectangle_area.py
+|       |-- quadratic_solver.py
+|       |-- days_in_month.py
+|       |-- prime_check.py
+|       |-- alternating_sum.py
+|       |-- gcd_calculator.py
+|       `-- factorial_sum.py
 `-- test/
 	|-- issue1_valid_testcases.md
-	`-- test_issue1_valid_inputs.py
+	|-- issue2_valid_testcases.md
+	|-- test_issue1_valid_inputs.py
+	`-- test_issue2_boundary_invalid_inputs.py
 ```
 
-## Mô tả nhanh
+## Mô tả thư mục
 
-- `src/issue1/`: Logic chính cho 8 bài toán (mỗi file là 1 bài)
-- `src/issue2/`: Chưa triển khai (dành cho test case không hợp lệ, biên, ngoại lệ)
-- `test/issue1_valid_testcases.md`: Danh sách test case hợp lệ theo phân lớp tương đương
-- `test/test_issue1_valid_inputs.py`: Unit test Python cho các test case hợp lệ
+- `src/issue1/`: Logic chính cho 8 bài toán với dữ liệu hợp lệ
+- `src/issue2/`: Logic kiểm tra dữ liệu biên/không hợp lệ (TryParse + ràng buộc điều kiện)
+- `test/issue1_valid_testcases.md`: Test case hợp lệ cho Issue 1
+- `test/issue2_valid_testcases.md`: Test case biên và không hợp lệ cho Issue 2
+- `test/test_issue1_valid_inputs.py`: Unit test cho Issue 1
+- `test/test_issue2_boundary_invalid_inputs.py`: Unit test cho Issue 2
 
-## Cách chạy test (Issue 1)
+## Cách chạy test
 
-Từ thư mục gốc project, chạy:
+Chạy từng bộ test:
 
 ```bash
 python -m unittest test/test_issue1_valid_inputs.py
+python -m unittest test/test_issue2_boundary_invalid_inputs.py
 ```
 
-Nếu máy có nhiều phiên bản Python, dùng đúng đường dẫn Python bạn đang cấu hình (ví dụ `python3` hoặc đường dẫn tuyệt đối tới `python.exe`).
+Hoặc chạy toàn bộ test trong thư mục `test`:
 
-## Trạng thái hiện tại
+```bash
+python -m unittest discover -s test -p "test_*.py"
+```
 
-- Issue 1: Đã có logic và test case hợp lệ cho 8 bài toán
-- Issue 2: Chưa triển khai
+## Trạng thái
+
+- Issue 1: Đã hoàn thành
+- Issue 2: Đã hoàn thành
